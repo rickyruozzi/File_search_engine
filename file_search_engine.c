@@ -148,12 +148,19 @@ int count_total_words(index* Index){
     return count;
 }
 
-int word_occurence(index* Index, const char *word){
+int word_occurences(index* Index, const char *word){
     wordentry *we = Index->head;
     int count=0;
     while(we){
-        if(strcmp(word, we->word) == 0) count++;
-        we = we ->next;
+        if(strcmp(word, we->word)==0){
+            fileNode *current = we->files;
+            while(current){
+                count = count + current->count;
+                current = current ->next;
+            }
+            return count;
+        }
+        we = we->next;
     }
     return count;
 }

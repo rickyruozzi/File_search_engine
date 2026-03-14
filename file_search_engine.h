@@ -33,4 +33,4 @@ wordentry* search_word(index *Index, const char* word);
 void printFile(index *Index, const char* word);
 void free_index(index *Index);
 int count_total_words(index* Index);
-int word_occurence(index* Index, const char *word);
+int word_occurences(index* Index, const char *word);
