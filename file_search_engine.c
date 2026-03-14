@@ -143,6 +143,17 @@ int count_total_words(index* Index){
     int count=0;
     while(we){
         count++;
+        we = we->next;
+    }
+    return count;
+}
+
+int word_occurence(index* Index, const char *word){
+    wordentry *we = Index->head;
+    int count=0;
+    while(we){
+        if(strcmp(word, we->word) == 0) count++;
+        we = we ->next;
     }
     return count;
 }
