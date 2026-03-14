@@ -139,5 +139,10 @@ void free_index(index *Index){
 }
 
 int count_total_words(index* Index){
-    
+    wordentry *we = Index->head;
+    int count=0;
+    while(we){
+        count++;
+    }
+    return count;
 }
